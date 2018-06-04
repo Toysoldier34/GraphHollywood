@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GraphHollywood.iml" filepath="$PROJECT_DIR$/GraphHollywood.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Graphs/Graphs.iml" filepath="$PROJECT_DIR$/../Graphs/Graphs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../IT 301/WebCrawlerPart2-TonyThompsonMichealHorn/WebCrawlerPart2-TonyThompsonMichealHorn.iml" filepath="$PROJECT_DIR$/../../IT 301/WebCrawlerPart2-TonyThompsonMichealHorn/WebCrawlerPart2-TonyThompsonMichealHorn.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,3 +1,9 @@
+/**
+ * Tony Thompson
+ * May 27, 2018
+ * Graph.java
+ *
+ */
 package structures;
 
 import java.util.*;

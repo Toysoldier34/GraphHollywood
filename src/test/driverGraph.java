@@ -1,4 +1,9 @@
-package test;
+/**
+ * Tony Thompson
+ * May 27, 2018
+ * driverGraph.java
+ *
+ */package test;
 
 import java.io.File;
 import java.util.*;
@@ -103,12 +108,22 @@ public class driverGraph {
     private static void printActorNumbers(Graph graph, String name) {
         //generate the actor distance numbers for given actor
         Map<String,Integer> actorNumbers = graph.generateActorNumbers(name);
+        int total = 0;
+        int count = 0;
 
         //print results
         for (Map.Entry<String,Integer> actor : actorNumbers.entrySet()) {  //TODO fix map iterator
+            count++;
+            total += actor.getValue();
             System.out.print(actor.getKey()+":");
             System.out.println(actor.getValue());
         }
+        double average = 0.0;
+        if (total > 0) {
+            average = (double) count / total;
+        }
+        System.out.println();
+        System.out.println("The average \"Actor Number\" is: " + average);
     }//end printActorNumbers
 
 

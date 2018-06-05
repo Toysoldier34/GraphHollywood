@@ -16,27 +16,13 @@
           <file leaf-file-name="driverGraph.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/test/driverGraph.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="666">
-                  <caret line="129" column="0" lean-forward="true" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+                <state relative-caret-position="-1653">
+                  <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="method#main#0;class#driverGraph#0" expanded="false" />
                     <element signature="method#menuChoice#0;class#driverGraph#0" expanded="false" />
-                    <element signature="method#test#0;class#driverGraph#0" expanded="false" />
                     <element signature="docComment;method#actorFormat#0;class#driverGraph#0" expanded="false" />
-                    <element signature="method#actorFormat#0;class#driverGraph#0" expanded="false" />
-                    <element signature="method#getFileContents#0;class#driverGraph#0" expanded="false" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="20_actors_15_movies.txt" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/20_actors_15_movies.txt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="42" lean-forward="false" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -44,35 +30,9 @@
           <file leaf-file-name="Console.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/console/Console.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="464">
-                  <caret line="43" column="27" lean-forward="false" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+                <state relative-caret-position="377">
+                  <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="WeightedGraph.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/../Graphs/src/representations/WeightedGraph.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1740">
-                  <caret line="168" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
-                  <folding>
-                    <element signature="docComment;class#WeightedGraph#0" expanded="false" />
-                    <element signature="method#WeightedGraph#0;class#WeightedGraph#0" expanded="false" />
-                    <element signature="method#WeightedGraph#1;class#WeightedGraph#0" expanded="false" />
-                    <element signature="docComment;method#addEdge#0;class#WeightedGraph#0" expanded="false" />
-                    <element signature="method#addEdge#0;class#WeightedGraph#0" expanded="false" />
-                    <element signature="docComment;method#isValid#0;class#WeightedGraph#0" expanded="false" />
-                    <element signature="method#isValid#0;class#WeightedGraph#0" expanded="false" />
-                    <element signature="docComment;method#hasVertex#0;class#WeightedGraph#0" expanded="false" />
-                    <element signature="docComment;method#hasEdge#0;class#WeightedGraph#0" expanded="false" />
-                    <element signature="method#hasEdge#0;class#WeightedGraph#0" expanded="false" />
-                    <element signature="method#hasEdges#0;class#WeightedGraph#0" expanded="false" />
-                    <element signature="docComment;method#getEdgeWeight#0;class#WeightedGraph#0" expanded="false" />
-                    <element signature="method#getEdgeWeight#0;class#WeightedGraph#0" expanded="false" />
-                    <element signature="method#getEdge#0;class#WeightedGraph#0" expanded="false" />
-                    <element signature="class#ENode#0;class#WeightedGraph#0" expanded="false" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -84,11 +44,10 @@
           <file leaf-file-name="Graph.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/structures/Graph.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="638">
-                  <caret line="110" column="12" lean-forward="true" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="12" />
+                <state relative-caret-position="290">
+                  <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
                   <folding>
                     <element signature="docComment;method#Graph#0;class#Graph#0" expanded="false" />
-                    <element signature="method#Graph#0;class#Graph#0" expanded="false" />
                     <element signature="docComment;method#generateActorNumbers#0;class#Graph#0" expanded="false" />
                     <element signature="docComment;method#addVertex#0;class#Graph#0" expanded="false" />
                     <element signature="docComment;method#addEdge#0;class#Graph#0" expanded="false" />
@@ -134,8 +93,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/console/Console.java" />
-        <option value="$PROJECT_DIR$/src/test/driverGraph.java" />
         <option value="$PROJECT_DIR$/src/structures/Graph.java" />
+        <option value="$PROJECT_DIR$/src/test/driverGraph.java" />
       </list>
     </option>
   </component>
@@ -358,12 +317,12 @@
       <workItem from="1527699919088" duration="1186000" />
       <workItem from="1527872614229" duration="3730000" />
       <workItem from="1527959734225" duration="45833000" />
-      <workItem from="1528142293204" duration="13710000" />
+      <workItem from="1528142293204" duration="18093000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70207000" />
+    <option name="totallyTimeSpent" value="74590000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-12" y="-12" width="3024" height="1954" extended-state="6" />
@@ -406,46 +365,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/driverGraph.java</url>
-          <line>158</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/driverGraph.java</url>
-          <line>160</line>
-          <properties />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/driverGraph.java</url>
-          <line>176</line>
-          <properties />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/driverGraph.java</url>
-          <line>177</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/driverGraph.java</url>
-          <line>178</line>
-          <properties />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/driverGraph.java</url>
-          <line>157</line>
-          <properties class="test.driverGraph" method="printActorNumbers">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="45" />
     </breakpoint-manager>
     <watches-manager />
@@ -457,12 +376,8 @@
           <caret line="113" column="76" lean-forward="false" selection-start-line="113" selection-start-column="76" selection-end-line="113" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#driverGraph#0" expanded="false" />
             <element signature="method#menuChoice#0;class#driverGraph#0" expanded="false" />
-            <element signature="method#test#0;class#driverGraph#0" expanded="false" />
             <element signature="docComment;method#actorFormat#0;class#driverGraph#0" expanded="false" />
-            <element signature="method#actorFormat#0;class#driverGraph#0" expanded="false" />
-            <element signature="method#getFileContents#0;class#driverGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -513,7 +428,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;method#Graph#0;class#Graph#0" expanded="false" />
-            <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="docComment;method#generateActorNumbers#0;class#Graph#0" expanded="false" />
             <element signature="docComment;method#addVertex#0;class#Graph#0" expanded="false" />
             <element signature="docComment;method#addEdge#0;class#Graph#0" expanded="false" />
@@ -536,7 +450,6 @@
           <caret line="72" column="27" lean-forward="true" selection-start-line="72" selection-start-column="27" selection-end-line="72" selection-end-column="27" />
           <folding>
             <element signature="docComment;method#Graph#0;class#Graph#0" expanded="false" />
-            <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="docComment;method#generateActorNumbers#0;class#Graph#0" expanded="false" />
             <element signature="docComment;method#addVertex#0;class#Graph#0" expanded="false" />
             <element signature="docComment;method#addEdge#0;class#Graph#0" expanded="false" />
@@ -583,7 +496,6 @@
           <caret line="85" column="5" lean-forward="true" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
           <folding>
             <element signature="docComment;method#Graph#0;class#Graph#0" expanded="false" />
-            <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="docComment;method#generateActorNumbers#0;class#Graph#0" expanded="false" />
             <element signature="docComment;method#addVertex#0;class#Graph#0" expanded="false" />
             <element signature="docComment;method#addEdge#0;class#Graph#0" expanded="false" />
@@ -630,7 +542,6 @@
           <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
           <folding>
             <element signature="docComment;method#Graph#0;class#Graph#0" expanded="false" />
-            <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="docComment;method#generateActorNumbers#0;class#Graph#0" expanded="false" />
             <element signature="docComment;method#addVertex#0;class#Graph#0" expanded="false" />
             <element signature="docComment;method#addEdge#0;class#Graph#0" expanded="false" />
@@ -695,8 +606,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../Graphs/src/representations/WeightedGraph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1740">
-          <caret line="168" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+        <state relative-caret-position="116">
+          <caret line="171" column="39" lean-forward="true" selection-start-line="171" selection-start-column="39" selection-end-line="171" selection-end-column="39" />
           <folding>
             <element signature="docComment;class#WeightedGraph#0" expanded="false" />
             <element signature="method#WeightedGraph#0;class#WeightedGraph#0" expanded="false" />
@@ -717,37 +628,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/console/Console.java">
+    <entry file="file://$PROJECT_DIR$/300_actors_50_movies.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="43" column="27" lean-forward="false" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/driverGraph.java">
+    <entry file="file://$PROJECT_DIR$/src/console/Console.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="129" column="0" lean-forward="true" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#driverGraph#0" expanded="false" />
-            <element signature="method#menuChoice#0;class#driverGraph#0" expanded="false" />
-            <element signature="method#test#0;class#driverGraph#0" expanded="false" />
-            <element signature="docComment;method#actorFormat#0;class#driverGraph#0" expanded="false" />
-            <element signature="method#actorFormat#0;class#driverGraph#0" expanded="false" />
-            <element signature="method#getFileContents#0;class#driverGraph#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="377">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/structures/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="110" column="12" lean-forward="true" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="12" />
+        <state relative-caret-position="290">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="docComment;method#Graph#0;class#Graph#0" expanded="false" />
-            <element signature="method#Graph#0;class#Graph#0" expanded="false" />
             <element signature="docComment;method#generateActorNumbers#0;class#Graph#0" expanded="false" />
             <element signature="docComment;method#addVertex#0;class#Graph#0" expanded="false" />
             <element signature="docComment;method#addEdge#0;class#Graph#0" expanded="false" />
@@ -760,6 +662,18 @@
             <element signature="docComment;method#edgeSize#0;class#Graph#0" expanded="false" />
             <element signature="docComment;class#Node#0;class#Graph#0" expanded="false" />
             <element signature="class#Node#0;class#Graph#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/driverGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1653">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#menuChoice#0;class#driverGraph#0" expanded="false" />
+            <element signature="docComment;method#actorFormat#0;class#driverGraph#0" expanded="false" />
           </folding>
         </state>
       </provider>

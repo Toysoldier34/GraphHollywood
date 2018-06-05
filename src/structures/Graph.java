@@ -2,48 +2,17 @@ package structures;
 
 import java.util.*;
 
-    /*
-Each line of a file has the following format. Note that tv shows are also included in the data set.
-
-Actor/actress name | movie/tv show #1 | movie/tv show #2 | ...
-
-Here is a few lines from one of the files:
-
-Astaire, Fred | Puttin' on His Top Hat | "The Dick Cavett Show" | ...
-Baio, Scott | Battle of the Network Stars XIV | Circus of the Stars #5 | ...
-Bale, Christian | Larger Than Life Adversaries | "The Drunken Peasants" | ...
-Brosnan, Pierce | The Tailor of Panama | 25th Film Independent Spirit Awards | ...
 
 
-
-Building a Graph
-
-Your first programming task is to build a graph structure that can be used to generate "actor numbers." An actor number is like a "Bacon number" except that you can choose any actor as the source vertex. Your graph should have the follow properties:
-
-Edges are undirected.
-Both actors and movies are represented in the graph by vertices. i.e. An edge cannot contain an actor or a movie.
-You can use an adjacency list or adjacency matrix, whichever your prefer.
-
-
-
-
-Create a new routine that accepts an actor name and calculates the "actor number" for all other actors in the graph above. For example:
-
-To calculate "actor numbers",  you should use breadth-first search on your graph (BFS) to identify actors/movies. You should not be using depth-first-search. Take a moment and consider why this is the case. There are several complications when writing BFS:
-
-You need to keep a counter for each set of neighbors traversed from your source vertex. For example:
-All immediate neighbors should have an "actor number" of 1
-All neighbors of immediate neighbors should have an "actor number" of 2
-You must skip all vertices that store movies as part of your calculation
-         */
-
-
+/**
+ * Graph undirected structure to hold actors and movies with the ties between them
+ */
 public class Graph {
 
     //field
     private static final int INFINITY = Integer.MAX_VALUE;
     private boolean[][] adjMatrix;  //adjacency matrix holding only relations
-    private Node[] vData;  //data of each vertex  //TODO change to something resizable to accommodate for more movies
+    private Node[] vData;  //data of each vertex
     private int V;  //number of vertices (elements)
     private int E;  //number of edges (relations)
 
@@ -55,7 +24,6 @@ public class Graph {
      * @param V number of items that will be added
      */
     public Graph(int V) {
-        System.out.println("const" + V);
         this.V = 0;
         adjMatrix = new boolean[V][V];
         vData = new Node[V];
@@ -70,7 +38,7 @@ public class Graph {
     public Map< String,Integer> generateActorNumbers(String actorSource) {
         //find Actor to get index and verify it exists
         int actor = findIndex(actorSource);
-        Map<String,Integer> map = new TreeMap<String, Integer>();  //data to return
+        Map<String,Integer> map = new LinkedHashMap<String, Integer>();  //data to return
 
         if (actor >= 0) {  //breadth search from person recording steps
             Queue<Integer> q = new LinkedList<>();  //main queue to work through
@@ -100,34 +68,16 @@ public class Graph {
                 }
             }
 
-            System.out.println("Before map build ordering");
-
-            /*
-            TODO Everything works correctly so far aside from printing order
-            Everything is added in correct order, HashMap doesn't retain insertion
-            order. TreeMap suggested as alternative, but didn't work on first test
-             */
-
-            
-
             //loops through, finding all actors of incrementing distance
             //builds return map in priority order with closest actors first
             for (int n = 0; n < V; n+=2) {  //n = distance
                 for (int m = 0; m < V; m++) {  //m = vertex index
                     //divide distance by 2 to remove movies
                     if (distTo[m] == n) {
-                        System.out.println("map.put" + vData[m].name +" " + n/2);
                         map.put(vData[m].name , n/2);
                     }
                 }
             }
-
-            System.out.println("***** Before ForEach Map *****");
-            for (Map.Entry<String,Integer> xx : map.entrySet()) {  //TODO fix map iterator
-                System.out.print(xx.getKey()+":");
-                System.out.println(xx.getValue());
-            }
-            System.out.println("***** After ForEach Map *****");
         } else {
             System.out.println("Actor not found.");
         }
@@ -146,8 +96,6 @@ public class Graph {
         int i = findIndex(name);
         if (i == -1) {
             vData[V++] = new Node(name, type);
-        } else {
-            //System.out.println("&&&& ADD " + name+ ":"+i+"  Already added");
         }
     }//end addVertex
 
@@ -212,8 +160,6 @@ public class Graph {
 
     /***************  COUNTS  ***************/
     //getters
-
-
     /**
      * Get number of vertices
      * @return int number of vertices

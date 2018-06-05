@@ -7,41 +7,24 @@ import java.util.regex.Pattern;
 import console.Console;
 import structures.Graph;
 
+/**
+ * Gets input to build a graph of actor movie relations and returns the info
+ */
 public class driverGraph {
 
+    /**
+     * Main method to start program to generate actor relation numbers
+     * @param args
+     */
     public static void main(String[] args) {
-        //test();  //TODO remove
         boolean killProgram = false;
         while (!killProgram) {
             Console.printMenu();
             //gets user choice then carries out the action returning here
-            //TODO correct version
-            //killProgram = menuChoice(Console.getInt("Enter number for desired action"));
-            killProgram = menuChoice(1);
-            killProgram = true;
+            killProgram = menuChoice(Console.getInt("Enter number for desired action"));
         }//end while
         System.exit(0);
     }
-
-
-
-    /*  Example code to handle the return
-           HashMap< String,Integer> hm = new HashMap< String,Integer>();
-          hm.put("a", new Integer(100));
-          hm.put("b", new Integer(200));
-          hm.put("c", new Integer(300));
-          hm.put("d", new Integer(400));
-
-          // Returns Set view
-          Set< Map.Entry< String,Integer> > st = hm.entrySet();
-
-          for (Map.Entry< String,Integer> me:st)
-          {
-              System.out.print(me.getKey()+":");
-              System.out.println(me.getValue());
-          }
-          */
-
 
 
 
@@ -61,26 +44,17 @@ public class driverGraph {
         }//end switch
     }//end menuChoice
 
-    private static void test() {
-        Graph graph = new Graph(3);
-        graph.addVertex("Test", false);
-        graph.addVertex("Test2", false);
-        graph.addVertex("TestM", true);
-        graph.addEdge("Test", "TestM");
-        graph.addEdge("Test2", "TestM");
-        //System.out.println(graph.findIndex("Test2"));
-        //System.out.println("__print__");
-        printActorNumbers(graph, "Test");
-        //System.out.println("Test success?");
-    }
 
-
+    /**
+     * takes in name of file and loads it
+     * each line is processed into actors and movies which
+     * are then entered into graph. Connections to a given
+     * actor are returned to the user
+     */
     private static void processFile(String filename) {
-        System.out.println("processFile");
         ArrayList<String> contents = getFileContents(filename);  //returned file contents
         HashSet<String> unique = new HashSet<>();  //tracks unique vertices
         ArrayList<String[]> processed = new ArrayList<>();  //stores each split line
-
 
         //process file contents
         for (String line : contents) {
@@ -89,50 +63,27 @@ public class driverGraph {
             processed.add(parts);  //add whole line for processing
             //add parts to HashSet to get total count of unique items
             for (String part : parts) {
-                //System.out.println(part);
                 unique.add(part);
             }
-            //System.out.println("\n *New Line* \n");
         }
-        System.out.println("UNIQUE SIZE:" + unique.size());
 
+        //Initialize graph to number of unique entries
+        Graph graph = new Graph(unique.size());
 
-
-        //TODO code to process text file
-
-
-        //Graph graph = new Graph(unique.size());  //TODO replace with uni size
-        Graph graph = new Graph(unique.size());  //TODO replace with uni size
-
-        //TODO code to add to graph
+        //code to add to graph
         for (String[] line : processed) {  //for each line
-            //System.out.println(Arrays.toString(line));
             String actor = actorFormat(line[0]);
             graph.addVertex(actor, false);  //first item of line is actor; add actor to graph
 
             for (int i = 1; i < line.length; i++) {  //loop remaining movies
-                //System.out.println("?" + i + ":" + line[i]);
                 graph.addVertex(line[i], true);
                 graph.addEdge(actor, line[i]);
             }
         }
 
-
-        System.out.println();
-        //String name = Console.getString("Enter Actor Name");
-        String name = "Alicia Silverstone";
-        int find = graph.findIndex(name);
-        System.out.println("Find: " +name+":"+find);
-        //printActorNumbers(graph, name);
-        System.out.println(name+"<-Name entered");
-        Map<String,Integer> actorNumbers = new HashMap<>();
-        actorNumbers = graph.generateActorNumbers(name);
-
-        System.out.println("Before ForEach Map");
-        for (Map.Entry<String,Integer> actor : actorNumbers.entrySet()) {  //TODO fix map iterator
-            System.out.print(actor.getKey()+":");
-            System.out.println(actor.getValue());
-        }
+        //prompt user for actor name to print results for
+        String name = Console.getString("Enter Actor Name");
+        printActorNumbers(graph, name);
 
     }//end processFile
 
@@ -144,53 +95,30 @@ public class driverGraph {
      */
     private static String actorFormat(String original) {
         String[] s = original.split(", ");
-        //System.out.println(original);  //TODO remove
-        //System.out.println(s[1] + " " + s[0]);
         return (s[1] + " " + s[0]);
     }
 
 
-    /** Jack Palance
-     *  Alicia Silverstone
-     * */
-
     //gets actor numbers generated and prints them out
     private static void printActorNumbers(Graph graph, String name) {
-        System.out.println("printActorNumbers ::" + name + "<-------------------------------");
-        // Returns Set view
+        //generate the actor distance numbers for given actor
         Map<String,Integer> actorNumbers = graph.generateActorNumbers(name);
-        /*
-        Set<Map.Entry<String,Integer>> actos = actorNumbers.entrySet();
 
-        for (Map.Entry<String, String> entry : map.entrySet())
-        {
-            System.out.println(entry.getKey() + "/" + entry.getValue());
-        }
-
-
-        Map<String, MyGroup> map = new HashMap<String, MyGroup>();
-        for (Map.Entry<String, MyGroup> entry : map.entrySet()) {
-            System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
-        }
-        */
-
+        //print results
         for (Map.Entry<String,Integer> actor : actorNumbers.entrySet()) {  //TODO fix map iterator
             System.out.print(actor.getKey()+":");
             System.out.println(actor.getValue());
         }
-
     }//end printActorNumbers
 
 
     //takes in file name and loads all contents into an ArrayList
     private static ArrayList<String> getFileContents(String filename) {
-        System.out.println("getFileContents");
         ArrayList<String> contents = new ArrayList<>();
         try (Scanner input = new Scanner(new File(filename))) {
             while (input.hasNext()) {
                 String temp = input.nextLine();
                 contents.add(temp);
-                //System.out.println(temp);
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());

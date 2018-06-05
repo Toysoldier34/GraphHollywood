@@ -41,6 +41,7 @@ public class Console {
      * prints out text for menu
      */
     public static void printMenu() {
+        System.out.println();
         System.out.println("\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/");
         System.out.println("Welcome to the Six-Degrees of Separation Game!\n");
         System.out.println("Please choose one of the following files:");

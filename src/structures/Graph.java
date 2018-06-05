@@ -68,23 +68,18 @@ public class Graph {
      * @param actorSource String name of actor
      */
     public Map< String,Integer> generateActorNumbers(String actorSource) {
-        //find Actor
+        //find Actor to get index and verify it exists
         int actor = findIndex(actorSource);
-        System.out.println("genActNum: " + actorSource + "::" + actor);
-        Map<String,Integer> map = new HashMap<String, Integer>();  //data to return
+        Map<String,Integer> map = new TreeMap<String, Integer>();  //data to return
 
-        actor = 111;  //TODO id for Alicia Silverstone
         if (actor >= 0) {  //breadth search from person recording steps
-            System.out.println("inside the if");
             Queue<Integer> q = new LinkedList<>();  //main queue to work through
             boolean[] marked = new boolean[V];  //tracks already processed data
             int[] distTo = new int[V];  //tracks distance to objects from source
             int[] edgeTo = new int[V];  //tracks edge to the source
 
             //defaults all distances to max
-            for (int i = 0; i < V; i++) {
-                distTo[i] = INFINITY;
-            }
+            for (int i = 0; i < V; i++) distTo[i] = INFINITY;
 
             //setting actor info to start
             distTo[actor] = 0;
@@ -105,22 +100,34 @@ public class Graph {
                 }
             }
 
+            System.out.println("Before map build ordering");
+
+            /*
+            TODO Everything works correctly so far aside from printing order
+            Everything is added in correct order, HashMap doesn't retain insertion
+            order. TreeMap suggested as alternative, but didn't work on first test
+             */
+
+            
+
             //loops through, finding all actors of incrementing distance
             //builds return map in priority order with closest actors first
             for (int n = 0; n < V; n+=2) {  //n = distance
                 for (int m = 0; m < V; m++) {  //m = vertex index
                     //divide distance by 2 to remove movies
-                    System.out.println("map.put" + vData[m].name +" " + n/2);
-                    if (distTo[m] == n) map.put(vData[m].name , n/2);
+                    if (distTo[m] == n) {
+                        System.out.println("map.put" + vData[m].name +" " + n/2);
+                        map.put(vData[m].name , n/2);
+                    }
                 }
             }
 
-            System.out.println("Please work");
+            System.out.println("***** Before ForEach Map *****");
             for (Map.Entry<String,Integer> xx : map.entrySet()) {  //TODO fix map iterator
                 System.out.print(xx.getKey()+":");
                 System.out.println(xx.getValue());
             }
-            System.out.println("Did it work?");
+            System.out.println("***** After ForEach Map *****");
         } else {
             System.out.println("Actor not found.");
         }
@@ -136,14 +143,12 @@ public class Graph {
      * @param type boolean 0:false for actor; 1:true for movie
      */
     public void addVertex(String name, boolean type) {
-        for (int i = 0; i < V; i++) {
-            if (vData[i].name == name) {
-                System.out.println("addVer Name exists already:" + name);
-                return;
-            }
+        int i = findIndex(name);
+        if (i == -1) {
+            vData[V++] = new Node(name, type);
+        } else {
+            //System.out.println("&&&& ADD " + name+ ":"+i+"  Already added");
         }
-        //System.out.println("Adding vertex " + V + ":" + name);
-        vData[V++] = new Node(name, type);
     }//end addVertex
 
 
@@ -155,6 +160,7 @@ public class Graph {
     public void addEdge(String actor, String movie) {
         int a = findIndex(actor);
         int b = findIndex(movie);
+
         if (a != -1 && b != -1) {  //ensures both items exist
             addEdge(a, b);
         } else {
@@ -168,7 +174,7 @@ public class Graph {
      * @param a vertex index
      * @param b vertex index
      */
-    public void addEdge(int a, int b) {
+    private void addEdge(int a, int b) {
         if (adjMatrix[a][b] && adjMatrix[b][a]) return;  //checks if edge exists
         //check if vertices exist
         if (vData[a] != null && vData[b] != null) {
@@ -186,17 +192,7 @@ public class Graph {
      */
     public int findIndex(String name) {
         for (int i = 0; i < V; i++) {
-                //System.out.println("vDat " + i + " vDat.name:"+vData[i].name + " | name:" + name);
-            //TODO This is not triggering name matches once in genActNum
-            if (vData[i].name == name) {
-                if (vData[i].type == false) {
-
-                    System.out.println("findIndex: Its a match!  " + vData[i].name + ":" + name + " = " + i + "");
-                    //System.out.println();
-
-                }
-                return i;
-            }
+            if (vData[i].name.equals(name)) return i;
         }
         return -1;
     }

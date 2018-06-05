@@ -18,6 +18,7 @@ public class driverGraph {
             //TODO correct version
             //killProgram = menuChoice(Console.getInt("Enter number for desired action"));
             killProgram = menuChoice(1);
+            killProgram = true;
         }//end while
         System.exit(0);
     }
@@ -100,30 +101,34 @@ public class driverGraph {
         //TODO code to process text file
 
 
-        Graph graph = new Graph(3000);  //TODO replace with uni size
+        //Graph graph = new Graph(unique.size());  //TODO replace with uni size
+        Graph graph = new Graph(unique.size());  //TODO replace with uni size
 
         //TODO code to add to graph
         for (String[] line : processed) {  //for each line
+            //System.out.println(Arrays.toString(line));
             String actor = actorFormat(line[0]);
             graph.addVertex(actor, false);  //first item of line is actor; add actor to graph
-            //System.out.println("Actor: " + actor);
-            //System.out.println("********* Find: Cicely Tyson " + graph.findIndex("Cicely Tyson"));
 
             for (int i = 1; i < line.length; i++) {  //loop remaining movies
+                //System.out.println("?" + i + ":" + line[i]);
                 graph.addVertex(line[i], true);
                 graph.addEdge(actor, line[i]);
-
             }
         }
 
 
-
-        String name = Console.getString("Enter Actor Name");
-        //String name = "Jack Palance";
+        System.out.println();
+        //String name = Console.getString("Enter Actor Name");
+        String name = "Alicia Silverstone";
+        int find = graph.findIndex(name);
+        System.out.println("Find: " +name+":"+find);
         //printActorNumbers(graph, name);
         System.out.println(name+"<-Name entered");
         Map<String,Integer> actorNumbers = new HashMap<>();
-                actorNumbers = graph.generateActorNumbers(name);
+        actorNumbers = graph.generateActorNumbers(name);
+
+        System.out.println("Before ForEach Map");
         for (Map.Entry<String,Integer> actor : actorNumbers.entrySet()) {  //TODO fix map iterator
             System.out.print(actor.getKey()+":");
             System.out.println(actor.getValue());
